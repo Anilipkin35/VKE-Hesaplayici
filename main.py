@@ -4,7 +4,7 @@ import os
 isim_soyisim = input("İsim ve Soyisim: ")
 boy = float(input("Boyunuzu metre cinsinden girin (ör. 1.75): "))
 kilo = float(input("Kilonuzu girin (kg): "))
-
+print ("brach denemesi için değişiklik")
 # VKE hesaplama
 vke = kilo / (boy ** 2)
 durum = ""
