@@ -37,7 +37,7 @@ jobs:
         echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
         echo "${{ github.event.inputs.boy }}" >> input_data.txt
         echo "${{ github.event.inputs.kilo }}" >> input_data.txt
-        cat input_data.txt  # Dosyadaki verileri görüntüle
+        cat input_data.txt  # Dosyanın içeriğini yazdır
 
     - name: Run VKE Script
       run: |
