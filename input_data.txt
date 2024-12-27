@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 Arda Tunalı
 1.85
 100
+=======
+Kaan Abdulbaki Uşaklıoğlu
+1.78
+70
+>>>>>>> sonuclar
