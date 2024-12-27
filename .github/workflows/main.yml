@@ -18,10 +18,11 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-24.04
-    
+
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
@@ -31,9 +32,13 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies
+    - name: Install dependencies (Skip if none)
       run: |
-        pip install
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else
+          echo "No requirements.txt found, skipping pip install."
+        fi
 
     - name: Display inputs (Debug)
       run: |
@@ -51,12 +56,3 @@ jobs:
     - name: Run VKE Script
       run: |
         python main.py
-    - name: Upload result file as artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: vke-result
-        path: ${{ github.workspace }}/*.txt
-
-    - name: Display VKE result file link
-      run: |
-        echo "VKE sonucu dosyasına erişmek için: ${{ github.workspace }}/*.txt"
