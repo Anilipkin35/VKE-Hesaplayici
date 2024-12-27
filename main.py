@@ -3,12 +3,23 @@ import os
 if __name__ == "__main__":
     # Dosyadaki verileri oku
     with open(os.path.join(os.getcwd(), "input_data.txt"), "r") as f:
-        isim_soyisim = f.readline().strip()
-        boy = float(f.readline().strip())
-        kilo = float(f.readline().strip())
+        lines = f.readlines()
+
+    # input_data.txt dosyasındaki her satır için boşluğu kontrol et
+    if len(lines) < 3:
+        print("input_data.txt dosyası eksik veya hatalı formatta.")
+        exit(1)
+
+    isim_soyisim = lines[0].strip() if lines[0].strip() else "Bilgi yok"
+    try:
+        boy = float(lines[1].strip()) if lines[1].strip() else 0
+        kilo = float(lines[2].strip()) if lines[2].strip() else 0
+    except ValueError:
+        print("Boy ve kilo değerleri geçerli sayılar olmalıdır.")
+        exit(1)
 
     # Vücut Kitle Endeksi hesaplama
-    vke = kilo / (boy ** 2)
+    vke = kilo / (boy ** 2) if boy != 0 else 0
 
     # Durum ve tavsiyeyi belirleme
     if vke < 18.5:
