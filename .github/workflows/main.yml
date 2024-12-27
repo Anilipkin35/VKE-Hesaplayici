@@ -32,13 +32,10 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies (Skip if none)
+    - name: Install dependencies
       run: |
-        if [ -f requirements.txt ]; then
-          pip install -r requirements.txt
-        else
-          echo "No requirements.txt found, skipping pip install."
-        fi
+        pip install --upgrade pip
+        pip install -r requirements.txt || true  # `requirements.txt` boş olursa hata almayı engeller
 
     - name: Display inputs (Debug)
       run: |
