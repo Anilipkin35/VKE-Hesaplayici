@@ -17,7 +17,7 @@ on:
         default: 70
   push:
     branches:
-      - sonuclar
+      - main
 
 jobs:
   build:
