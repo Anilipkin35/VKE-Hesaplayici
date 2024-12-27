@@ -20,17 +20,24 @@ on:
       - main
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+
+    - name: Display inputs (Debug)
+      run: |
+        echo "isim_soyisim: ${{ github.event.inputs.isim_soyisim }}"
+        echo "boy: ${{ github.event.inputs.boy }}"
+        echo "kilo: ${{ github.event.inputs.kilo }}"
 
     - name: Create input_data.txt
       run: |
         echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
         echo "${{ github.event.inputs.boy }}" >> input_data.txt
         echo "${{ github.event.inputs.kilo }}" >> input_data.txt
+        cat input_data.txt  # Dosyadaki verileri görüntüle
 
     - name: Run VKE Script
       run: |
