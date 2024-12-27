@@ -1,31 +1,40 @@
-name: VKE Hesaplama Workflow
+name: Python Application
 
 on:
-  workflow_dispatch:  # Manuel olarak tetiklenebilir
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  run-vke-script:
+  build:
     runs-on: ubuntu-latest
-    
-    # Workflow parametreleri
-    inputs:
-      isim_soyisim:
-        description: 'İsim ve Soyisim'
-        required: true
-        type: string
-      boy:
-        description: 'Boy (metre cinsinden, örneğin 1.75)'
-        required: true
-        type: number
-      kilo:
-        description: 'Kilo (kg cinsinden)'
-        required: true
-        type: number
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      
-      - name: Run Python Script
+      # Repository'yi klonlama
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Python'u kurma
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'  # Hedef Python sürümünü belirtin
+
+      # Bağımlılıkları yükleme (requirements.txt varsa)
+      - name: Install dependencies
         run: |
-          python main.py "${{ github.event.inputs.isim_soyisim }}" ${{ github.event.inputs.boy }} ${{ github.event.inputs.kilo }}
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # Kodun çalıştığını doğrulama
+      - name: Run script
+        run: |
+          python your_script_name.py < input_data.txt
+
+      # Çıktıyı kontrol etme (isteğe bağlı)
+      - name: Verify results
+        run: |
+          ls -la
