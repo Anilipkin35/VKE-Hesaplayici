@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       isim_soyisim:
-        description: "İsim ve Soyisim"
+        description: "İsim ve Soyisim (ör: Ali Veli)"
         required: true
-        default: "Örnek İsim"
+        default: "Ali Veli"
       boy:
         description: "Boy (metre cinsinden, ör: 1.75)"
         required: true
@@ -24,9 +24,20 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    - name: Run VKE Script
+    - name: Set Up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+
+    - name: Create Input File
       run: |
         echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
         echo "${{ github.event.inputs.boy }}" >> input_data.txt
         echo "${{ github.event.inputs.kilo }}" >> input_data.txt
-        python main.py
+
+    - name: Run VKE Script
+      run: python main.py
