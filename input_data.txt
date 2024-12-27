@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-Arda Tunalı
-1.85
-100
-=======
-Kaan Abdulbaki Uşaklıoğlu
-=======
-Mehmet Serdar Koz
->>>>>>> sonuclar
+Anil Ipkin
 1.78
 70
->>>>>>> sonuclar
