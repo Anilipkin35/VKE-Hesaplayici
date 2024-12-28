@@ -56,7 +56,7 @@ jobs:
         boy=$(sed -n '2p' input_data.txt)
         kilo=$(sed -n '3p' input_data.txt)
 
-        # Negatif değerleri kontrol et
+        # Boy ve kilo negatif mi?
         if [[ "$boy" =~ ^- ]]; then
           echo "Hata: input_data.txt dosyasındaki boy negatif değer içeriyor!"
           exit 1  # İşlem başarısız olur
@@ -67,7 +67,18 @@ jobs:
           exit 1  # İşlem başarısız olur
         fi
 
-        echo "Veri geçerli!"
+        # Değerler sayıya dönüşebiliyor mu?
+        if ! [[ "$boy" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
+          echo "Hata: input_data.txt dosyasındaki boy geçerli bir sayı değil!"
+          exit 1
+        fi
+
+        if ! [[ "$kilo" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
+          echo "Hata: input_data.txt dosyasındaki kilo geçerli bir sayı değil!"
+          exit 1
+        fi
+
+        echo "Veri geçerli!"  # Eğer her şey doğruysa, veri geçerli!
 
     - name: Run VKE Script
       run: |
