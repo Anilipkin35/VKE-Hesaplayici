@@ -56,10 +56,13 @@ jobs:
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        # Boy ve kilo değerlerini kontrol et (negatif olmamalı)
-        boy=$(sed -n '2p' input_data.txt)
-        kilo=$(sed -n '3p' input_data.txt)
+        # input_data.txt dosyasındaki boy ve kilo değerlerini kontrol et
+        boy=$(sed -n '2p' input_data.txt)  # Boy değeri 2. satırda
+        kilo=$(sed -n '3p' input_data.txt)  # Kilo değeri 3. satırda
 
+        echo "Boy: $boy, Kilo: $kilo"  # Debug: Boy ve kilo değerlerini yazdır
+
+        # Negatif değerleri kontrol et
         if [[ "$boy" == "-"* ]] || [[ "$kilo" == "-"* ]] || (( $(echo "$boy < 0" | bc -l) )) || (( $(echo "$kilo < 0" | bc -l) )); then
           echo "Hata: input_data.txt dosyasındaki negatif değerler geçersiz!"  # Hata mesajı
           exit 1  # İşlem başarısız olur
@@ -67,9 +70,9 @@ jobs:
           echo "Veri geçerli!"  # Veri geçerli olduğu için devam eder
         fi
 
-    - name: Check for Errors
+    - name: Final Check for Errors
       run: |
-        # Eğer bir hata varsa, işlemi başarısız yap
+        # Eğer önceki adımda bir hata varsa, işlem başarısız yap
         if [[ $? -ne 0 ]]; then
           echo "Hata bulundu. İşlem başarısız!"  # Hata mesajı
           exit 1  # İşlem başarısız olur
