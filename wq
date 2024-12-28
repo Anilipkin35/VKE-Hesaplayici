@@ -1,0 +1,439 @@
+[33mcommit 694e2da23189f35f46717ecaf17135479761f0b4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32msonuclar[m[33m, [m[1;31morigin/sonuclar[m[33m)[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Sat Dec 28 20:35:20 2024 +0300
+
+    .
+
+[33mcommit cbc0c725cd7444a5878d83cf1c1e1456a3cd35bc[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Sat Dec 28 20:24:40 2024 +0300
+
+    kaan
+
+[33mcommit fd65fb4a6a1953b2b0dd2e766f11d89833002014[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:39:07 2024 +0300
+
+    m
+
+[33mcommit 22c20d4b8594494c16b83f660dc706c7074ecd43[m
+Merge: 9ee02d5 58eb809
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:37:34 2024 +0300
+
+    Merge branch 'main' of https://github.com/Anilipkin35/VKE-Hesaplayici into sonuclar
+
+[33mcommit 58eb80957185c4b75c5b7da36d7ac78a58347328[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:37:17 2024 +0300
+
+    m
+
+[33mcommit 9ee02d5da5032133bff4f31dc1bfac884ea43577[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:27:01 2024 +0300
+
+    silindi
+
+[33mcommit bba2635541e65168eaeaccd1da61227d2a86cd1b[m
+Merge: 0efc937 d4b53e0
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:23:33 2024 +0300
+
+    Merge branch 'sonuclar'
+
+[33mcommit d4b53e003811633308df1138a14f6a04dcc64b2d[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:23:01 2024 +0300
+
+    serdar
+
+[33mcommit 0efc9373ae68dca126ab330e5092a57a7f89e4e9[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:06:47 2024 +0300
+
+    maindeki veriler silindi
+
+[33mcommit 09dc153e657ee6eec334924f64b7baef8cb6a2db[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:06:01 2024 +0300
+
+    sonuclar maine aktarıldı
+
+[33mcommit 4ea1dd2e245ecb14bf73a9b2c50d699244ac1bfb[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:04:07 2024 +0300
+
+    anıl
+
+[33mcommit 719acb7c59fe5e91fff84d3e9fce1adf8072f455[m
+Merge: 90c268c 018aa8e
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:03:23 2024 +0300
+
+    sonuclar maine aktarıldı
+
+[33mcommit 90c268c476944e00d3c5460567f0e02ac75a5f94[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 20:02:24 2024 +0300
+
+    anıl
+
+[33mcommit 018aa8eeba9e704a1ff3906adf59a910b81f9ea3[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:59:57 2024 +0300
+
+    .
+
+[33mcommit 4c13d5a0d68fdefef9e9b9921a8d22143127a47e[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:59:08 2024 +0300
+
+    main güncellemesi
+
+[33mcommit 65721a6c83f4bbef7c1d5b05425e8314a02f167d[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:57:49 2024 +0300
+
+    main güncellemesi
+
+[33mcommit deecfca7255b0f9aab6bc06fb565175f0f74c376[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:57:18 2024 +0300
+
+    arda
+
+[33mcommit eb6c60d8c2015dea4fca89a28695e9ef15dca554[m
+Merge: 703f1b6 8c2adb9
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:55:16 2024 +0300
+
+    Merge branch 'main' of https://github.com/Anilipkin35/VKE-Hesaplayici into sonuclar
+
+[33mcommit 8c2adb96953c8837bab49c87767f9d3942296566[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:54:28 2024 +0300
+
+    anıl
+
+[33mcommit 703f1b6aa73a4ba3d9690aaa3263c15ac6f894ad[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:53:47 2024 +0300
+
+    güncelleme
+
+[33mcommit 5774de217bb3e4b26e4dbd3619602ad3b7de6769[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:48:22 2024 +0300
+
+    sonuclar maine aktarıldı
+
+[33mcommit 9c50083affb2aef6c3449ce4655ee796e3899e2d[m
+Merge: 72019fc cf522ba
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:47:28 2024 +0300
+
+    soncular maine aktarıldı
+
+[33mcommit cf522babb1f8119363b0ba147455beaa51853f46[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:42:10 2024 +0300
+
+    serdar
+
+[33mcommit 72019fcc02c8e73c1ceb5488b2890c7be061f099[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:39:40 2024 +0300
+
+    maindeki veriler silindi
+
+[33mcommit 16c65a9f1df43ed6a6fb96087db378b3a0534427[m
+Merge: 1e33a40 a22076d
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:39:02 2024 +0300
+
+    sonuclar maine aktarıldı
+
+[33mcommit a22076d43872d6a80ef2f9f5383914a533224ab7[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:35:35 2024 +0300
+
+    kaan
+
+[33mcommit c4f6e58ae9989eae3b41ec7bdd753d3fb62aeeaa[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:34:10 2024 +0300
+
+    arda
+
+[33mcommit 1e33a40c006a848ce49a967b0317f22728e26f72[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:29:41 2024 +0300
+
+    .
+
+[33mcommit 8223e420e9edb69f6e99b719ad1155d625c4ff1f[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:28:59 2024 +0300
+
+    güncelleme
+
+[33mcommit 8d1f786c467b97dd9d2b894cc5c7aa850876e0d9[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:24:24 2024 +0300
+
+    anıl
+
+[33mcommit 5dc932819c9f9afe59e86c4b16eff38713b7a99a[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:20:30 2024 +0300
+
+    veriler silindi
+
+[33mcommit 5407f435ada10efde92bf99c380f9f7c1dbbf5d0[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:17:44 2024 +0300
+
+    anıl
+
+[33mcommit f3494c143bf46d3ec517f90494e7bce092618f41[m
+Merge: 41d08d3 2160c64
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:07:34 2024 +0300
+
+    Merge branch 'main' into sonuclar
+    
+    git checkout main
+    Please enter a commit message to explain why this merge is necessary,
+     especially if it merges an updated upstream into a topic branch.
+    
+     Lines starting with '#' will be ignored, and an empty message aborts
+     the commit.
+
+[33mcommit 2160c640c8d4b87ddc8d54632384b2066e623b66[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:05:57 2024 +0300
+
+    main güncellemesi
+
+[33mcommit 41d08d3d54a749cd083872af4811884b78ff82f2[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:02:07 2024 +0300
+
+    duru
+
+[33mcommit b2421e0d8d957d9e98bebd426296a836854f8c92[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 19:01:15 2024 +0300
+
+    duru
+
+[33mcommit cfce7d86cb8b5fb816f7c2d400cb9e41dda6d65c[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:54:41 2024 +0300
+
+    duru
+
+[33mcommit 449c4a18e431b3c9d7120a45888fb1dbff1634f2[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:53:38 2024 +0300
+
+    duru
+
+[33mcommit 592b075507b5e538c5ee977b493b9edc4a0b1e5c[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:35:18 2024 +0300
+
+    ahmet
+
+[33mcommit f5013c878fe07e48c6b58de7913b308943b455e0[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:32:48 2024 +0300
+
+    ol artık
+
+[33mcommit 9d6d5110caa27ca8b30d05d5134ee61a216671c8[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:31:16 2024 +0300
+
+    bu olacak
+
+[33mcommit 472a388eac2ddbdb7481b51adb63292918c0bc45[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:28:05 2024 +0300
+
+    bu son
+
+[33mcommit c6ca965330a8c9a5e5e6b3a23ad8bd07f01dda81[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:25:48 2024 +0300
+
+    son
+
+[33mcommit 1cc4616872a3168ab82fa105f7014eb7d351f070[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:16:16 2024 +0300
+
+    denemeler
+
+[33mcommit 1c0f203b66d1896ae59c1229723eb4a394d41a0f[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:15:07 2024 +0300
+
+    denemeler
+
+[33mcommit 9801058065380ded8cc13023148e112aa85b3b6f[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:02:52 2024 +0300
+
+    denem
+
+[33mcommit e74164e430d0f5f0798cf46e2118df828dc28081[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 18:01:11 2024 +0300
+
+    denemee
+
+[33mcommit 6d02a9c2423d7deccbe79152960f520b105a00c4[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 17:57:21 2024 +0300
+
+    denemelere devam
+
+[33mcommit 75a1bd4879a92fcdec67bbdccf8983d7e84a13ca[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 17:53:20 2024 +0300
+
+    deneme
+
+[33mcommit 77bdf9971a5480a0ce0ad04a9b8319c1a7dc192a[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 17:50:07 2024 +0300
+
+    hala olmadı
+
+[33mcommit 49093e9975f4aaaf84d94d75ab86073e47fa31cb[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 17:48:58 2024 +0300
+
+    yml son hali
+
+[33mcommit 618ce65ce74bdc61554ba75d8e5cea76192ab63d[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 17:46:30 2024 +0300
+
+    yaml son hali
+
+[33mcommit d49bcc17bdb26b0b21d3c73184eaa25e42e90d32[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 17:43:49 2024 +0300
+
+    yaml son hali
+
+[33mcommit 3f6f0bd84a8be5bfefb915fbb1920ab601c6a647[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 17:30:31 2024 +0300
+
+    yaml
+
+[33mcommit 289f991316fda269e604c6a4c31821395f8fa69c[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 17:09:50 2024 +0300
+
+    yml
+
+[33mcommit 6a77374c1503f2e53ef02f1caded65968a016340[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 16:58:23 2024 +0300
+
+    güncelleme
+
+[33mcommit ea923bcd0c66b8f45f1d2228ec013e8ab058d70b[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Fri Dec 27 16:48:02 2024 +0300
+
+    yml güncellemesi
+
+[33mcommit 106b7a63da3f9cb5c0ead61c1eee5079b47f2666[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Thu Dec 26 12:10:44 2024 +0300
+
+    yml güncelleme
+
+[33mcommit 46768bfe682bf19b3e784951dd95a86bded2a536[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Thu Dec 26 12:09:35 2024 +0300
+
+    yml güncelleme
+
+[33mcommit 16051f0aeaf3b433de002dcdaa97c75b516da3f0[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Thu Dec 26 11:55:09 2024 +0300
+
+    güncelleme
+
+[33mcommit 4f27b679405c23a2260ca9e97a23389a248be793[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Thu Dec 26 11:52:32 2024 +0300
+
+    silindi
+
+[33mcommit e892efdaecf7571dcb1fe4738042a0f3f89777b5[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Thu Dec 26 11:20:38 2024 +0300
+
+    yml güncelleme
+
+[33mcommit 5e2fb05c5dcb9274e7975e1952fdcaec5555d767[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Thu Dec 26 11:14:45 2024 +0300
+
+    yml eklendi
+
+[33mcommit a0a24bd0272f49e7e5ad4ef39ed7fcce8e535aa3[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Wed Dec 25 20:12:44 2024 +0300
+
+    arda
+
+[33mcommit 3e905f95346e32d119ace7cfe636fe7e41e602da[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Wed Dec 25 20:11:48 2024 +0300
+
+    sildi
+
+[33mcommit 337b39b9f36cbf5f0c3aa71743fccc25135a982c[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Wed Dec 25 19:15:26 2024 +0300
+
+    brachi deneme için ekleme
+
+[33mcommit 6f68617c563ca8125ac71b99fb5cb339f2dfa0c5[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Wed Dec 25 19:11:34 2024 +0300
+
+    Murat
+
+[33mcommit 710ba599e300837591f4b47635e049cff0275ccd[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Wed Dec 25 19:09:34 2024 +0300
+
+    Kaan
+
+[33mcommit 124588779f6927c17a5d5c1699c96700df6bf24c[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Wed Dec 25 19:07:48 2024 +0300
+
+    serdar
+
+[33mcommit 47cbe24b67155874c90227494cf284926f9adc4c[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Wed Dec 25 18:53:03 2024 +0300
+
+    İlk proje yüklemesi
+
+[33mcommit 9681fe4939a697290c386bf6058956a1e57c9cee[m
+Author: Anıl Ipkin <anil.ipkin@ogr.ksbu.edu.tr>
+Date:   Wed Dec 25 18:25:36 2024 +0300
+
+    lk commit
