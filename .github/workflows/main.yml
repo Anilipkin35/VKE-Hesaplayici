@@ -69,10 +69,6 @@ jobs:
         fi
 
         # Boy ve kilo sayısal mı?
-        if ! [[ "$boy_cm" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
-          echo "Hata: input_data.txt dosyasındaki boy geçerli bir sayı değil!"
-          exit 1
-        fi
 
         if ! [[ "$kilo" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
           echo "Hata: input_data.txt dosyasındaki kilo geçerli bir sayı değil!"
