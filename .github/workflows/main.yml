@@ -54,11 +54,22 @@ jobs:
       run: |
         python main.py
 
-    - name: Check for Invalid Data in Output
+    - name: Check for Invalid Data in input_data.txt
       run: |
-        if grep -q "-" "output.txt"; then
-          echo "Hata: Geçersiz negatif değerler bulundu!"
+        if grep -E "[-][0-9]" input_data.txt; then
+          echo "Hata: input_data.txt dosyasındaki negatif değerler geçersiz!"
+          echo "Hata bulundu!" > error_flag.txt
           exit 1
         else
           echo "Veri geçerli!"
+        fi
+
+    - name: Check for Errors
+      run: |
+        if [ -f "error_flag.txt" ]; then
+          echo "Hata bulundu. Detaylar:"
+          cat error_flag.txt
+          exit 1
+        else
+          echo "Her şey yolunda!"
         fi
