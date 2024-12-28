@@ -56,7 +56,11 @@ jobs:
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        if grep -E "[-][0-9]" input_data.txt; then
+        # Boy ve kilo değerlerini kontrol et (negatif olmamalı)
+        boy=$(sed -n '2p' input_data.txt)
+        kilo=$(sed -n '3p' input_data.txt)
+
+        if [[ "$boy" == "-"* ]] || [[ "$kilo" == "-"* ]] || (( $(echo "$boy < 0" | bc -l) )) || (( $(echo "$kilo < 0" | bc -l) )); then
           echo "Hata: input_data.txt dosyasındaki negatif değerler geçersiz!"
           echo "Hata bulundu!" > error_flag.txt
           exit 1
