@@ -11,12 +11,8 @@ if __name__ == "__main__":
         exit(1)
 
     isim_soyisim = lines[0].strip() if lines[0].strip() else "Bilgi yok"
-    try:
-        boy = float(lines[1].strip()) if lines[1].strip() else 0
-        kilo = float(lines[2].strip()) if lines[2].strip() else 0
-    except ValueError:
-        print("Boy ve kilo değerleri geçerli sayılar olmalıdır.")
-        exit(1)
+    boy = float(lines[1].strip()) if lines[1].strip() else 0
+    kilo = float(lines[2].strip()) if lines[2].strip() else 0
 
     # Vücut Kitle Endeksi hesaplama
     vke = kilo / (boy ** 2) if boy != 0 else 0
@@ -51,6 +47,7 @@ if __name__ == "__main__":
         dosya.write(f"Vücut Kitle Endeksi: {vke:.2f}\n")
         dosya.write(f"Durum: {durum}\n")
         dosya.write(f"Tavsiye: {tavsiye}\n")
+
     # Sonucu ekrana yazdırma
     print(f"Sonuçlar '{dosya_yolu}' adlı dosyaya kaydedildi.")
     print(f"Dosya yolu: {dosya_yolu}")

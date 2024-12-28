@@ -65,15 +65,16 @@ jobs:
         # Negatif değerleri kontrol et
         if [[ "$boy" == "-"* ]] || [[ "$kilo" == "-"* ]] || (( $(echo "$boy < 0" | bc -l) )) || (( $(echo "$kilo < 0" | bc -l) )); then
           echo "Hata: input_data.txt dosyasındaki negatif değerler geçersiz!"  # Hata mesajı
+          echo "Hata bulundu!" > error_flag.txt  # Hata varsa error_flag.txt oluşturulur
           exit 1  # İşlem başarısız olur
         else
           echo "Veri geçerli!"  # Veri geçerli olduğu için devam eder
         fi
 
-    - name: Final Check for Errors
+    - name: Check for Errors
       run: |
-        # Eğer önceki adımda bir hata varsa, işlem başarısız yap
-        if [[ $? -ne 0 ]]; then
+        # Eğer error_flag.txt dosyası varsa hata mesajı yazdır
+        if [ -f "error_flag.txt" ]; then
           echo "Hata bulundu. İşlem başarısız!"  # Hata mesajı
           exit 1  # İşlem başarısız olur
         else
