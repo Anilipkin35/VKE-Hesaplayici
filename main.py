@@ -15,7 +15,7 @@ if __name__ == "__main__":
     kilo = float(lines[2].strip()) if lines[2].strip() else 0
 
     # Vücut Kitle Endeksi hesaplama
-    vke = kilo / (boy ** 2) if boy != 0 else 0
+    vke = kilo / ((boy/100) ** 2) if boy != 0 else 0
 
     # Durum ve tavsiyeyi belirleme
     if vke < 18.5:
