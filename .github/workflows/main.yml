@@ -61,19 +61,18 @@ jobs:
         kilo=$(sed -n '3p' input_data.txt)
 
         if [[ "$boy" == "-"* ]] || [[ "$kilo" == "-"* ]] || (( $(echo "$boy < 0" | bc -l) )) || (( $(echo "$kilo < 0" | bc -l) )); then
-          echo "Hata: input_data.txt dosyasındaki negatif değerler geçersiz!"
-          echo "Hata bulundu!" > error_flag.txt
-          exit 1
+          echo "Hata: input_data.txt dosyasındaki negatif değerler geçersiz!"  # Hata mesajı
+          exit 1  # İşlem başarısız olur
         else
-          echo "Veri geçerli!"
+          echo "Veri geçerli!"  # Veri geçerli olduğu için devam eder
         fi
 
     - name: Check for Errors
       run: |
-        # Eğer error_flag.txt dosyası varsa hata mesajı yazdır
-        if [ -f "error_flag.txt" ]; then
-          echo "Hata bulundu. İşlem başarısız!"
-          exit 1
+        # Eğer bir hata varsa, işlemi başarısız yap
+        if [[ $? -ne 0 ]]; then
+          echo "Hata bulundu. İşlem başarısız!"  # Hata mesajı
+          exit 1  # İşlem başarısız olur
         else
-          echo "Her şey yolunda!"
+          echo "Her şey yolunda!"  # Her şey yolundaysa işlem başarılı
         fi
