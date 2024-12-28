@@ -67,3 +67,13 @@ jobs:
         else
           echo "Veri geçerli!"
         fi
+
+    - name: Check for Errors
+      run: |
+        # Eğer error_flag.txt dosyası varsa hata mesajı yazdır
+        if [ -f "error_flag.txt" ]; then
+          echo "Hata bulundu. İşlem başarısız!"
+          exit 1
+        else
+          echo "Her şey yolunda!"
+        fi
