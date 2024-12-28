@@ -8,9 +8,9 @@ on:
         required: true
         default: "Ahmet Kaya"
       boy:
-        description: "Boy (metre cinsinden, ör: 1.75)"
+        description: "Boy (santimetre cinsinden, ör: 175)"
         required: true
-        default: 1.75
+        default: 175
       kilo:
         description: "Kilo (kg)"
         required: true
@@ -40,7 +40,7 @@ jobs:
     - name: Display inputs (Debug)
       run: |
         echo "isim_soyisim: ${{ github.event.inputs.isim_soyisim }}"
-        echo "boy: ${{ github.event.inputs.boy }}"
+        echo "boy (santimetre): ${{ github.event.inputs.boy }}"
         echo "kilo: ${{ github.event.inputs.kilo }}"
 
     - name: Create input_data.txt
@@ -53,22 +53,23 @@ jobs:
     - name: Check for Invalid Data in input_data.txt
       run: |
         # Boy ve kilo değerlerini kontrol et (negatif olmamalı)
-        boy=$(sed -n '2p' input_data.txt)
+        boy_cm=$(sed -n '2p' input_data.txt)  # Boyu santimetre olarak al
         kilo=$(sed -n '3p' input_data.txt)
 
-        # Boy ve kilo negatif mi?
-        if [[ "$boy" =~ ^- ]]; then
+        # Boy negatif mi?
+        if [[ "$boy_cm" =~ ^- ]]; then
           echo "Hata: input_data.txt dosyasındaki boy negatif değer içeriyor!"
           exit 1  # İşlem başarısız olur
         fi
 
+        # Kilo negatif mi?
         if [[ "$kilo" =~ ^- ]]; then
           echo "Hata: input_data.txt dosyasındaki kilo negatif değer içeriyor!"
           exit 1  # İşlem başarısız olur
         fi
 
-        # Değerler sayıya dönüşebiliyor mu?
-        if ! [[ "$boy" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
+        # Boy ve kilo sayısal mı?
+        if ! [[ "$boy_cm" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
           echo "Hata: input_data.txt dosyasındaki boy geçerli bir sayı değil!"
           exit 1
         fi

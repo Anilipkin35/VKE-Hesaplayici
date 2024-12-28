@@ -42,7 +42,7 @@ if __name__ == "__main__":
     dosya_yolu = os.path.join(os.getcwd(), dosya_adi)
     with open(dosya_yolu, "w") as dosya:
         dosya.write(f"İsim ve Soyisim: {isim_soyisim}\n")
-        dosya.write(f"Boy: {boy:.2f} m\n")
+        dosya.write(f"Boy: {boy:.2f} cm\n")
         dosya.write(f"Kilo: {kilo:.2f} kg\n")
         dosya.write(f"Vücut Kitle Endeksi: {vke:.2f}\n")
         dosya.write(f"Durum: {durum}\n")
