@@ -51,7 +51,6 @@ if __name__ == "__main__":
         dosya.write(f"Vücut Kitle Endeksi: {vke:.2f}\n")
         dosya.write(f"Durum: {durum}\n")
         dosya.write(f"Tavsiye: {tavsiye}\n")
-
     # Sonucu ekrana yazdırma
     print(f"Sonuçlar '{dosya_yolu}' adlı dosyaya kaydedildi.")
     print(f"Dosya yolu: {dosya_yolu}")
