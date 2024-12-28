@@ -54,4 +54,4 @@ if __name__ == "__main__":
 
     # Sonucu ekrana yazdırma
     print(f"Sonuçlar '{dosya_yolu}' adlı dosyaya kaydedildi.")
-    print(f"Dosya yolu: {dosya_yolu}")i
+    print(f"Dosya yolu: {dosya_yolu}")
