@@ -32,23 +32,18 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Create input_data.txt
-      run: |
-        echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
-        echo "${{ github.event.inputs.boy }}" >> input_data.txt
-        echo "${{ github.event.inputs.kilo }}" >> input_data.txt
-
     - name: Debug input_data.txt
       run: |
+        # input_data.txt dosyasını kontrol et
         echo "input_data.txt dosyasının içeriği (satır numarası ile):"
         cat -n input_data.txt  # Satır numaraları ile içeriği yazdır
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        # Boy ve Kilo değerlerini al, boşlukları temizle
+        # input_data.txt dosyasını oku
         boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
         kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
-        isim_soyisim="${{ github.event.inputs.isim_soyisim }}"
+        isim_soyisim=$(sed -n '1p' input_data.txt)  # İsim ve soyisim satırını al
 
         # İsim ve soyisimde geçersiz karakterler var mı? (Burada özel karakterler kontrol ediliyor)
         if [[ "$isim_soyisim" =~ [\+\?\&\%\^\'\(\)\/\[\]\{\}\-\*\_\£] ]]; then
