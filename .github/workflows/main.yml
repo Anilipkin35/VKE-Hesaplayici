@@ -48,6 +48,8 @@ jobs:
         cat -n input_data.txt  # Satır numaraları ile içeriği yazdır
         echo "Dosya boyutu:"
         wc -c input_data.txt  # Dosyanın boyutunu kontrol et
+        echo "Boşlukları ve özel karakterleri göster: "
+        cat -v input_data.txt  # Gizli karakterleri göster
 
     - name: Check for Invalid Data in input_data.txt
       run: |
@@ -55,8 +57,11 @@ jobs:
         boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
         kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
 
+        # Debug: Boy ve Kilo değerlerini yazdır
+        echo "Debug: Boy değeri: '$boy_cm', Kilo değeri: '$kilo'"
+
         # Boy ve Kilo boş mu?
-        if [[ -z "${boy_cm// /}" ]] || [[ -z "${kilo// /}" ]]; then
+        if [[ -z "$boy_cm" ]] || [[ -z "$kilo" ]]; then
           echo "Hata: Boy veya Kilo boş değer içeriyor!"
           exit 1
         fi
