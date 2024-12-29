@@ -41,15 +41,14 @@ jobs:
         echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
         echo "${{ github.event.inputs.boy }}" >> input_data.txt
         echo "${{ github.event.inputs.kilo }}" >> input_data.txt
+        echo "input_data.txt dosyasının içeriği:"
+        cat -n input_data.txt  # Satır numaraları ile içeriği kontrol et
 
-    - name: Debug input_data.txt
+    - name: Normalize line endings (Windows/Newline cleanup)
       run: |
-        echo "input_data.txt dosyasının içeriği (satır numarası ile):"
-        cat -n input_data.txt  # Satır numaraları ile içeriği yazdır
-        echo "Dosya boyutu:"
-        wc -c input_data.txt  # Dosyanın boyutunu kontrol et
-        echo "Boşlukları ve özel karakterleri göster: "
-        cat -v input_data.txt  # Gizli karakterleri göster
+        sed -i 's/\r//' input_data.txt  # Windows tarzı satır sonlarını temizle
+        echo "input_data.txt dosyasının içeriği (sonra):"
+        cat -n input_data.txt  # İçeriği tekrar kontrol et
 
     - name: Check for Invalid Data in input_data.txt
       run: |
@@ -66,7 +65,8 @@ jobs:
           exit 1
         fi
 
-        echo "Boy: '$boy_cm', Kilo: '$kilo'"  # Debug: Değerleri kontrol et
+        # Debug: Değerler kontrol edilerek yazdırılır
+        echo "Boy: '$boy_cm', Kilo: '$kilo'"
 
         # Negatif değer kontrolü (Sayısal karşılaştırma ile)
         if [ "$boy_cm" -lt 0 ]; then
