@@ -51,8 +51,8 @@ jobs:
         isim_soyisim="${{ github.event.inputs.isim_soyisim }}"
 
         # İsim ve soyisimde geçersiz karakterler var mı? (Burada özel karakterler kontrol ediliyor)
-        if [[ "$isim_soyisim" =~ [\+\?\&\%\^\'\(\)\/\#\$\{\}\([)\(])\*\"\] ]]; then
-          echo "Hata: İsim veya soyisimde geçersiz karakterler var (+, ? gibi)"
+        if [[ "$isim_soyisim" =~ [\+\?\&\%\^\'\(\)\/\[\]\{\}\-\*\_\£] ]]; then
+          echo "Hata: İsim veya soyisimde geçersiz karakterler var (+, ?, &, %, ^, ', (, /, [, ], {, }, -, *, _, £ gibi)."
           exit 1
         fi
 
