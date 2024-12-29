@@ -15,6 +15,7 @@ on:
         description: "Kilo (kg)"
         required: true
         default: 70
+
   push:
     branches:
       - sonuclar
@@ -48,6 +49,7 @@ jobs:
         boy_cm=$(sed -n '2p' input_data.txt)  # Boyu al
         kilo=$(sed -n '3p' input_data.txt)    # Kilo değerini al
 
+        # Negatif değer kontrolü
         if [[ $boy_cm =~ ^- ]] || [[ $kilo =~ ^- ]]; then
           echo "Hata: Negatif değerler bulundu!"
           exit 1
