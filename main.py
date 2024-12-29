@@ -11,15 +11,11 @@ if __name__ == "__main__":
         exit(1)
 
     isim_soyisim = lines[0].strip() if lines[0].strip() else "Bilgi yok"
-    try:
-        boy = float(lines[1].strip()) if lines[1].strip() else 0
-        kilo = float(lines[2].strip()) if lines[2].strip() else 0
-    except ValueError:
-        print("Boy ve kilo değerleri geçerli sayılar olmalıdır.")
-        exit(1)
+    boy = float(lines[1].strip()) if lines[1].strip() else 0
+    kilo = float(lines[2].strip()) if lines[2].strip() else 0
 
     # Vücut Kitle Endeksi hesaplama
-    vke = kilo / (boy ** 2) if boy != 0 else 0
+    vke = kilo / ((boy/100) ** 2) if boy != 0 else 0
 
     # Durum ve tavsiyeyi belirleme
     if vke < 18.5:
@@ -46,7 +42,7 @@ if __name__ == "__main__":
     dosya_yolu = os.path.join(os.getcwd(), dosya_adi)
     with open(dosya_yolu, "w") as dosya:
         dosya.write(f"İsim ve Soyisim: {isim_soyisim}\n")
-        dosya.write(f"Boy: {boy:.2f} m\n")
+        dosya.write(f"Boy: {boy:.2f} cm\n")
         dosya.write(f"Kilo: {kilo:.2f} kg\n")
         dosya.write(f"Vücut Kitle Endeksi: {vke:.2f}\n")
         dosya.write(f"Durum: {durum}\n")
