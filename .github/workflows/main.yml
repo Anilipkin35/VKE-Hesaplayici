@@ -15,6 +15,9 @@ on:
         description: "Kilo (kg)"
         required: true
         default: 70
+  push:
+    branches:
+      - sonuclar
 
 jobs:
   build:
