@@ -43,13 +43,6 @@ jobs:
         # input_data.txt dosyasını oku
         boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
         kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
-        isim_soyisim=$(sed -n '1p' input_data.txt)  # İsim ve soyisim satırını al
-
-        # İsim ve soyisimde geçersiz karakterler var mı? (Burada özel karakterler kontrol ediliyor)
-        if [[ "$isim_soyisim" =~ [\+\?\&\%\^\'\(\)\/\[\]\{\}\-\*\_\£] ]]; then
-          echo "Hata: İsim veya soyisimde geçersiz karakterler var (+, ?, &, %, ^, ', (, /, [, ], {, }, -, *, _, £ gibi)."
-          exit 1
-        fi
 
         # Boy ve Kilo boş mu?
         if [[ -z "$boy_cm" ]] || [[ -z "$kilo" ]]; then
