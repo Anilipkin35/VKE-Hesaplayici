@@ -27,32 +27,40 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
 
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Create input_data.txt
+      run: |
+        echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
+        echo "${{ github.event.inputs.boy }}" >> input_data.txt
+        echo "${{ github.event.inputs.kilo }}" >> input_data.txt
+
     - name: Debug input_data.txt
       run: |
-        # input_data.txt dosyasının içeriğini yazdır
         echo "input_data.txt dosyasının içeriği (satır numarası ile):"
-        cat -n input_data.txt  # Satır numaralarıyla içeriği yazdır
-        echo "Dosya boyutu:"
-        wc -c input_data.txt  # Dosyanın boyutunu kontrol et
-        echo "Boşlukları ve özel karakterleri göster: "
-        cat -v input_data.txt  # Gizli karakterleri göster
+        cat -n input_data.txt  # Satır numaraları ile içeriği yazdır
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        # input_data.txt dosyasındaki boy ve kilo değerlerini al, boşlukları temizle
+        # Boy ve Kilo değerlerini al, boşlukları temizle
         boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
         kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
+        isim_soyisim="${{ github.event.inputs.isim_soyisim }}"
 
-        # Debug: Boy ve Kilo değerlerini yazdır
-        echo "Debug: Boy değeri: '$boy_cm', Kilo değeri: '$kilo'"
+        # İsim ve soyisimde geçersiz karakterler var mı? (Burada özel karakterler kontrol ediliyor)
+        if [[ "$isim_soyisim" =~ [\+\?\&\%\^\'\(\)\/\#\$\{\}\([)\(])\*\"\] ]]; then
+          echo "Hata: İsim veya soyisimde geçersiz karakterler var (+, ? gibi)"
+          exit 1
+        fi
 
         # Boy ve Kilo boş mu?
         if [[ -z "$boy_cm" ]] || [[ -z "$kilo" ]]; then
           echo "Hata: Boy veya Kilo boş değer içeriyor!"
           exit 1
         fi
-
-        echo "Boy: '$boy_cm', Kilo: '$kilo'"  # Debug: Değerleri kontrol et
 
         # Negatif değer kontrolü (Sayısal karşılaştırma ile)
         if [ "$boy_cm" -lt 0 ]; then
@@ -64,6 +72,8 @@ jobs:
           echo "Hata: Kilo negatif bir değer!"
           exit 1
         fi
+
+        echo "Boy: '$boy_cm', Kilo: '$kilo'"  # Debug: Değerleri kontrol et
 
         echo "Değerler geçerli. İşleme devam ediliyor."
 
