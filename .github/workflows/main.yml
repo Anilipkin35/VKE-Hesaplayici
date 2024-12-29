@@ -46,11 +46,12 @@ jobs:
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        boy_cm=$(sed -n '2p' input_data.txt)  # Boyu al
-        kilo=$(sed -n '3p' input_data.txt)    # Kilo değerini al
+        # Değerleri oku ve boşlukları temizle
+        boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
+        kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
 
         # Negatif değer kontrolü
-        if [[ $boy_cm =~ ^- ]] || [[ $kilo =~ ^- ]]; then
+        if [[ "$boy_cm" =~ ^- ]] || [[ "$kilo" =~ ^- ]]; then
           echo "Hata: Negatif değerler bulundu!"
           exit 1
         fi
