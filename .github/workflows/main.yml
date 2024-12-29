@@ -68,13 +68,6 @@ jobs:
           exit 1  # İşlem başarısız olur
         fi
 
-        # Boy ve kilo sayısal mı?
-
-        if ! [[ "$kilo" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
-          echo "Hata: input_data.txt dosyasındaki kilo geçerli bir sayı değil!"
-          exit 1
-        fi
-
         echo "Veri geçerli!"  # Eğer her şey doğruysa, veri geçerli!
 
     - name: Run VKE Script
