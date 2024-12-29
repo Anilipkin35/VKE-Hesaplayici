@@ -48,12 +48,17 @@ jobs:
         echo "input_data.txt dosyasının içeriği:"
         cat input_data.txt
         ls -l input_data.txt  # Dosyanın bulunduğu dizini kontrol et
-        echo "Verilerin başarılı şekilde yazıldığından emin olduktan sonra ilerleyin."
 
     - name: Check for Invalid Data in input_data.txt
       run: |
         boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
         kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
+
+        # Boy ve kilo boş mu?
+        if [[ -z "$boy_cm" ]] || [[ -z "$kilo" ]]; then
+          echo "Hata: Boy veya Kilo boş değer içeriyor!"
+          exit 1
+        fi
 
         echo "Boy: $boy_cm, Kilo: $kilo"  # Debug: Değerleri kontrol et
 
