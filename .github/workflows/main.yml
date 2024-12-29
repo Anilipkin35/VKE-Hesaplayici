@@ -15,9 +15,6 @@ on:
         description: "Kilo (kg)"
         required: true
         default: 70
-  push:
-    branches:
-      - sonuclar
 
 jobs:
   build:
@@ -32,43 +29,28 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        pip install --upgrade pip
-        pip install -r requirements.txt || true
-
-    - name: Display inputs (Debug)
-      run: |
-        echo "isim_soyisim: ${{ github.event.inputs.isim_soyisim }}"
-        echo "boy (santimetre): ${{ github.event.inputs.boy }}"
-        echo "kilo: ${{ github.event.inputs.kilo }}"
-
     - name: Create input_data.txt
       run: |
         echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
         echo "${{ github.event.inputs.boy }}" >> input_data.txt
         echo "${{ github.event.inputs.kilo }}" >> input_data.txt
-        cat input_data.txt  # Dosyanın içeriğini yazdır
+
+    - name: Debug input_data.txt
+      run: |
+        echo "input_data.txt dosyasının içeriği:"
+        cat input_data.txt
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        # Boy ve kilo değerlerini kontrol et (negatif olmamalı)
-        boy_cm=$(sed -n '2p' input_data.txt)  # Boyu santimetre olarak al
-        kilo=$(sed -n '3p' input_data.txt)
+        boy_cm=$(sed -n '2p' input_data.txt)  # Boyu al
+        kilo=$(sed -n '3p' input_data.txt)    # Kilo değerini al
 
-        # Boy negatif mi?
-        if [[ "$boy_cm" =~ ^- ]]; then
-          echo "Hata: input_data.txt dosyasındaki boy negatif değer içeriyor!"
-          exit 1  # İşlem başarısız olur
+        if [[ $boy_cm =~ ^- ]] || [[ $kilo =~ ^- ]]; then
+          echo "Hata: Negatif değerler bulundu!"
+          exit 1
         fi
 
-        # Kilo negatif mi?
-        if [[ "$kilo" =~ ^- ]]; then
-          echo "Hata: input_data.txt dosyasındaki kilo negatif değer içeriyor!"
-          exit 1  # İşlem başarısız olur
-        fi
-
-        echo "Veri geçerli!"  # Eğer her şey doğruysa, veri geçerli!
+        echo "Değerler geçerli. İşleme devam ediliyor."
 
     - name: Run VKE Script
       run: |
