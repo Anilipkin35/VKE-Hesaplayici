@@ -27,32 +27,19 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
-
-    - name: Create input_data.txt
+    - name: Debug input_data.txt
       run: |
-        echo "isim_soyisim: ${{ github.event.inputs.isim_soyisim }}"
-        echo "boy: ${{ github.event.inputs.boy }}"
-        echo "kilo: ${{ github.event.inputs.kilo }}"
-
-        echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
-        echo "${{ github.event.inputs.boy }}" >> input_data.txt
-        echo "${{ github.event.inputs.kilo }}" >> input_data.txt
-        echo "input_data.txt dosyasının içeriği:"
-        cat -n input_data.txt  # Satır numaraları ile içeriği kontrol et
-
-    - name: Normalize line endings (Windows/Newline cleanup)
-      run: |
-        sed -i 's/\r//' input_data.txt  # Windows tarzı satır sonlarını temizle
-        echo "input_data.txt dosyasının içeriği (sonra):"
-        cat -n input_data.txt  # İçeriği tekrar kontrol et
+        # input_data.txt dosyasının içeriğini yazdır
+        echo "input_data.txt dosyasının içeriği (satır numarası ile):"
+        cat -n input_data.txt  # Satır numaralarıyla içeriği yazdır
+        echo "Dosya boyutu:"
+        wc -c input_data.txt  # Dosyanın boyutunu kontrol et
+        echo "Boşlukları ve özel karakterleri göster: "
+        cat -v input_data.txt  # Gizli karakterleri göster
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        # Boy ve Kilo değerlerini al, boşlukları temizle
+        # input_data.txt dosyasındaki boy ve kilo değerlerini al, boşlukları temizle
         boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
         kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
 
@@ -65,8 +52,7 @@ jobs:
           exit 1
         fi
 
-        # Debug: Değerler kontrol edilerek yazdırılır
-        echo "Boy: '$boy_cm', Kilo: '$kilo'"
+        echo "Boy: '$boy_cm', Kilo: '$kilo'"  # Debug: Değerleri kontrol et
 
         # Negatif değer kontrolü (Sayısal karşılaştırma ile)
         if [ "$boy_cm" -lt 0 ]; then
