@@ -35,6 +35,10 @@ jobs:
 
     - name: Create input_data.txt
       run: |
+        echo "isim_soyisim: ${{ github.event.inputs.isim_soyisim }}"
+        echo "boy: ${{ github.event.inputs.boy }}"
+        echo "kilo: ${{ github.event.inputs.kilo }}"
+
         echo "${{ github.event.inputs.isim_soyisim }}" > input_data.txt
         echo "${{ github.event.inputs.boy }}" >> input_data.txt
         echo "${{ github.event.inputs.kilo }}" >> input_data.txt
@@ -43,12 +47,15 @@ jobs:
       run: |
         echo "input_data.txt dosyasının içeriği:"
         cat input_data.txt
+        ls -l input_data.txt  # Dosyanın bulunduğu dizini kontrol et
+        echo "Verilerin başarılı şekilde yazıldığından emin olduktan sonra ilerleyin."
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        # Değerleri oku ve boşlukları temizle
         boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
         kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
+
+        echo "Boy: $boy_cm, Kilo: $kilo"  # Debug: Değerleri kontrol et
 
         # Negatif değer kontrolü (Sayısal karşılaştırma ile)
         if [ "$boy_cm" -lt 0 ]; then
