@@ -1,20 +1,9 @@
 name: Run VKE Script
 
 on:
-  workflow_dispatch:
-    inputs:
-      isim_soyisim:
-        description: "İsim ve Soyisim"
-        required: true
-      boy:
-        description: "Boy (santimetre cinsinden, ör: 175)"
-        required: true
-      kilo:
-        description: "Kilo (kg)"
-        required: true
   push:
     branches:
-      - sonuclar
+      - main
 
 jobs:
   build:
@@ -31,17 +20,14 @@ jobs:
 
     - name: Debug input_data.txt
       run: |
-        # input_data.txt dosyasını kontrol et
         echo "input_data.txt dosyasının içeriği (satır numarası ile):"
-        cat -n input_data.txt  # Satır numaraları ile içeriği yazdır
+        cat -n input_data.txt
 
     - name: Check for Invalid Data in input_data.txt
       run: |
-        # input_data.txt dosyasını oku
-        boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
-        kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
+        boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')
+        kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')
 
-        # Negatif değer kontrolü (Sayısal karşılaştırma ile)
         if [ "$boy_cm" -lt 0 ]; then
           echo "Hata: Boy negatif bir değer!"
           exit 1
@@ -52,9 +38,7 @@ jobs:
           exit 1
         fi
 
-        echo "Boy: '$boy_cm', Kilo: '$kilo'"  # Debug: Değerleri kontrol et
-
-        echo "Değerler geçerli. İşleme devam ediliyor."
+        echo "Boy: '$boy_cm', Kilo: '$kilo'"
 
     - name: Run VKE Script
       run: |
