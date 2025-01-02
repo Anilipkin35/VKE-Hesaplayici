@@ -3,7 +3,7 @@ name: Run VKE Script
 on:
   push:
     branches:
-      - main
+      - sonuclar
 
 jobs:
   build:
