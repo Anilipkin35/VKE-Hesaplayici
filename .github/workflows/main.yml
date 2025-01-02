@@ -6,15 +6,12 @@ on:
       isim_soyisim:
         description: "İsim ve Soyisim"
         required: true
-        default: "Ahmet Kaya"
       boy:
         description: "Boy (santimetre cinsinden, ör: 175)"
         required: true
-        default: 175
       kilo:
         description: "Kilo (kg)"
         required: true
-        default: 70
   push:
     branches:
       - sonuclar
@@ -43,12 +40,6 @@ jobs:
         # input_data.txt dosyasını oku
         boy_cm=$(sed -n '2p' input_data.txt | tr -d '[:space:]')  # Boyu al ve boşlukları temizle
         kilo=$(sed -n '3p' input_data.txt | tr -d '[:space:]')    # Kilo değerini al ve boşlukları temizle
-
-        # Boy ve Kilo boş mu?
-        if [[ -z "$boy_cm" ]] || [[ -z "$kilo" ]]; then
-          echo "Hata: Boy veya Kilo boş değer içeriyor!"
-          exit 1
-        fi
 
         # Negatif değer kontrolü (Sayısal karşılaştırma ile)
         if [ "$boy_cm" -lt 0 ]; then
